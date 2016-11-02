@@ -29,7 +29,7 @@ public class Opportunity extends BusinessEntity {
 
 		public static final String FLD_Id = "Id";
 		public static final String FLD_AccountId = "AccountId";
-		public static final String FLD_Name = "Name";
+		public static final String FLD_AccountName = "AccountName";
 		public static final String FLD_Description = "Description";
 		public static final String FLD_StageName = "StageName";
 		public static final String FLD_Amount = "Amount";
@@ -44,7 +44,7 @@ public class Opportunity extends BusinessEntity {
 		static {
 			FIELDS.add(FLD_Id);
 			FIELDS.add(FLD_AccountId);
-			FIELDS.add(FLD_Name);
+			FIELDS.add(FLD_AccountName);
 			FIELDS.add(FLD_Description);
 			FIELDS.add(FLD_StageName);
 			FIELDS.add(FLD_Amount);
@@ -82,15 +82,15 @@ public class Opportunity extends BusinessEntity {
 				addField(FLD_AccountId, value);
 		}
 
-		public String getName()
+		public String getAccountName()
 		{
-			return getField(FLD_Name);
+			return getField(FLD_AccountName);
 		}
 
-		public void setName(String value)
+		public void setAccountName(String value)
 		{
 			if(value != null)
-				addField(FLD_Name, value);
+				addField(FLD_AccountName, value);
 		}
 
 		public String getDescription()

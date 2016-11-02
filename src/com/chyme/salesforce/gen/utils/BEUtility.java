@@ -5,24 +5,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map.Entry;
 
-import com.chyme.salesforce.gen.be.BE_SearchOpportunities;
+import com.chyme.salesforce.gen.be.BE_SearchOpportunitiesSample;
 import com.chyme.salesforce.gen.be.Opportunity;
 import com.unvired.lib.utility.BusinessEntity;
 import com.unvired.lib.utility.Structure;
 
 public class BEUtility
 {
-	public static List<BE_SearchOpportunities> getBE_SearchOpportunities(List<BusinessEntity> beList)
+	public static List<BE_SearchOpportunitiesSample> getBE_SearchOpportunitiesSample(List<BusinessEntity> beList)
 	{
-		ArrayList<BE_SearchOpportunities> typedBEs = new ArrayList<BE_SearchOpportunities>();
+		ArrayList<BE_SearchOpportunitiesSample> typedBEs = new ArrayList<BE_SearchOpportunitiesSample>();
 
 		if(beList != null)
 		{
 			for (BusinessEntity be : beList)
 			{
-				if(be.getName().equals(BE_SearchOpportunities.NAME))
+				if(be.getName().equals(BE_SearchOpportunitiesSample.NAME))
 				{
-					BE_SearchOpportunities typedBE = new BE_SearchOpportunities();
+					BE_SearchOpportunitiesSample typedBE = new BE_SearchOpportunitiesSample();
 					typedBEs.add(typedBE);
 					for (Entry<String, String> field : be.getHeader().getFieldsInOrder().entrySet())
 					{

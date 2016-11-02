@@ -1,20 +1,20 @@
 package com.chyme.salesforce.pa;
 
-import com.chyme.salesforce.gen.pa.ABSTRACT_COMMAND_SEARCHOPPORTUNITIES;
+import com.chyme.salesforce.gen.pa.ABSTRACT_COMMAND_SEARCHOPPORTUNITIESSAMPLE;
 import com.chyme.salesforce.gen.salesforce.sobject.OPPORTUNITY;
 import com.chyme.salesforce.gen.salesforce.sobject.SOBJECT;
 import com.unvired.chyme.api.Message;
 import com.unvired.ump.agent.IHTTPResponse;
 
-public class COMMAND_SEARCHOPPORTUNITIES extends ABSTRACT_COMMAND_SEARCHOPPORTUNITIES {
+public class COMMAND_SEARCHOPPORTUNITIESSAMPLE extends ABSTRACT_COMMAND_SEARCHOPPORTUNITIESSAMPLE {
 
 	private SOBJECT[] opportunities = null;
 		
 	public void execute() {
 
 		try {				
-			String opportunityName = inputBE_SearchOpportunities.getSearchOpportunities_HEADER().getOPPORTUNITY_NAME();
-			String opportunityStage = inputBE_SearchOpportunities.getSearchOpportunities_HEADER().getSTAGE();			
+			String opportunityName = inputBE_SearchOpportunitiesSample.getSearchOpportunitiesSample_HEADER().getOPPORTUNITY_NAME();
+			String opportunityStage = inputBE_SearchOpportunitiesSample.getSearchOpportunitiesSample_HEADER().getSTAGE();			
 
 			boolean whereClause = false;
 			String queryString = "SELECT Id, Name, OwnerId, AccountId, Type, LeadSource, Amount, ExpectedRevenue, CloseDate, StageName, Probability, Description FROM Opportunity";

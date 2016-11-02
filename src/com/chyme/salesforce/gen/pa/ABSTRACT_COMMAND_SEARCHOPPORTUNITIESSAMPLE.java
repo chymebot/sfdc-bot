@@ -4,14 +4,27 @@ package com.chyme.salesforce.gen.pa;
 import com.chyme.salesforce.gen.utils.BEUtility;
 import com.unvired.ump.agent.IBusinessProcess;
 
-public abstract class ABSTRACT_COMMAND_SEARCHOPPORTUNITIES extends BotService {
-	protected com.chyme.salesforce.gen.be.BE_SearchOpportunities inputBE_SearchOpportunities;
+public abstract class ABSTRACT_COMMAND_SEARCHOPPORTUNITIESSAMPLE extends BotService {
+	protected com.chyme.salesforce.gen.be.BE_SearchOpportunitiesSample inputBE_SearchOpportunitiesSample;
 
 	public void init(IBusinessProcess process) {
 		super.init(process);
 
-		inputBE_SearchOpportunities = BEUtility.getBE_SearchOpportunities(process.getBusinessEntityInput()).get(0);
+		inputBE_SearchOpportunitiesSample = BEUtility.getBE_SearchOpportunitiesSample(process.getBusinessEntityInput())
+				.get(0);
 
+	}
+
+	public com.chyme.salesforce.gen.salesforce.sobject.OPPORTUNITY mapPojoToSalesforce(
+			com.chyme.salesforce.gen.be.BE_SearchOpportunitiesSample pojo) {
+		com.chyme.salesforce.gen.salesforce.sobject.OPPORTUNITY entity = new com.chyme.salesforce.gen.salesforce.sobject.OPPORTUNITY();
+		com.chyme.salesforce.gen.be.BE_SearchOpportunitiesSample.SearchOpportunitiesSample_HEADER header = (com.chyme.salesforce.gen.be.BE_SearchOpportunitiesSample.SearchOpportunitiesSample_HEADER) pojo
+				.getHeader();
+
+		entity.setNAME(header.getOPPORTUNITY_NAME());
+		entity.setSTAGENAME(header.getSTAGE());
+
+		return entity;
 	}
 
 	public com.chyme.salesforce.gen.be.Opportunity mapSalesforceToPojo(
@@ -22,7 +35,6 @@ public abstract class ABSTRACT_COMMAND_SEARCHOPPORTUNITIES extends BotService {
 
 		header.setId(entity.getID());
 		header.setAccountId(entity.getACCOUNTID());
-		header.setName(entity.getNAME());
 		header.setDescription(entity.getDESCRIPTION());
 		header.setStageName(entity.getSTAGENAME());
 		header.setAmount(entity.getAMOUNT());
@@ -31,6 +43,7 @@ public abstract class ABSTRACT_COMMAND_SEARCHOPPORTUNITIES extends BotService {
 		header.setCloseDate(entity.getCLOSEDATE());
 		header.setLeadSource(entity.getLEADSOURCE());
 		header.setOwnerId(entity.getOWNERID());
+		header.setAccountName(entity.getNAME());
 
 		return pojo;
 	}
@@ -40,18 +53,6 @@ public abstract class ABSTRACT_COMMAND_SEARCHOPPORTUNITIES extends BotService {
 		com.chyme.salesforce.gen.be.Opportunity be = mapSalesforceToPojo(header);
 
 		return be;
-	}
-
-	public com.chyme.salesforce.gen.salesforce.sobject.OPPORTUNITY mapPojoToSalesforce(
-			com.chyme.salesforce.gen.be.BE_SearchOpportunities pojo) {
-		com.chyme.salesforce.gen.salesforce.sobject.OPPORTUNITY entity = new com.chyme.salesforce.gen.salesforce.sobject.OPPORTUNITY();
-		com.chyme.salesforce.gen.be.BE_SearchOpportunities.SearchOpportunities_HEADER header = (com.chyme.salesforce.gen.be.BE_SearchOpportunities.SearchOpportunities_HEADER) pojo
-				.getHeader();
-
-		entity.setNAME(header.getOPPORTUNITY_NAME());
-		entity.setSTAGENAME(header.getSTAGE());
-
-		return entity;
 	}
 
 }

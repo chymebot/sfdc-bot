@@ -51,7 +51,7 @@ public abstract class BotService implements IProcessAgent {
 		return (value == null || value.trim().isEmpty());
 	}
 
-	static final String AUTHORIZAION = "Bearer 00D90000000bBFp!AQQAQNAP0CtkPZlabWDlrzljdO4MN0rqkpc3iolVURbj6PAihd_pWI6otCvGEb_SF4.vmI9OlgKwKuqgZ9Yfy6SXhwaqsnqv";
+	static final String AUTHORIZAION = "Bearer 00D90000000bBFp!AQQAQGw34ZtET82WrU1Jmx5.55oRyc.m2McCJQQkhD13WFfO1LmngVM7R26A3bF.lucBLvzy9qKjUuHdFQ_iCZUv8CndP3a8";
 
 	static final String VERSION = "v36.0";
 	static final String CREATE = "/services/data/VERSION/sobjects/SOBJECT/";
@@ -86,7 +86,7 @@ public abstract class BotService implements IProcessAgent {
 
 		//	Execute
 		IHTTPResponse httpResponse = (IHTTPResponse) process.getService().submitRequest(httpRequest,
-				Constant.SALESFORCE_SALES_FORCE_SALESFORCE_EXECUTE);
+				Constant.SALESFORCE_SAMPLE_SALESFORCE_SAMPLE_SALESFORCE_EXECUTE);
 
 		return httpResponse;
 	}
@@ -115,7 +115,7 @@ public abstract class BotService implements IProcessAgent {
 
 		//	Execute
 		IHTTPResponse httpResponse = (IHTTPResponse) process.getService().submitRequest(httpRequest,
-				Constant.SALESFORCE_SALES_FORCE_SALESFORCE_EXECUTE);
+				Constant.SALESFORCE_SAMPLE_SALESFORCE_SAMPLE_SALESFORCE_EXECUTE);
 
 		return httpResponse;
 	}
@@ -142,7 +142,7 @@ public abstract class BotService implements IProcessAgent {
 
 		//	Execute
 		IHTTPResponse httpResponse = (IHTTPResponse) process.getService().submitRequest(httpRequest,
-				Constant.SALESFORCE_SALES_FORCE_SALESFORCE_EXECUTE);
+				Constant.SALESFORCE_SAMPLE_SALESFORCE_SAMPLE_SALESFORCE_EXECUTE);
 		return httpResponse;
 	}
 
@@ -170,7 +170,7 @@ public abstract class BotService implements IProcessAgent {
 
 			//	Execute
 			httpResponse = (IHTTPResponse) process.getService().submitRequest(httpRequest,
-					Constant.SALESFORCE_SALES_FORCE_SALESFORCE_EXECUTE);
+					Constant.SALESFORCE_SAMPLE_SALESFORCE_SAMPLE_SALESFORCE_EXECUTE);
 		} catch (Exception ex) {
 
 		}
@@ -209,7 +209,7 @@ public abstract class BotService implements IProcessAgent {
 
 			//	Execute
 			httpResponse = (IHTTPResponse) process.getService().submitRequest(httpRequest,
-					Constant.SALESFORCE_SALES_FORCE_SALESFORCE_EXECUTE);
+					Constant.SALESFORCE_SAMPLE_SALESFORCE_SAMPLE_SALESFORCE_EXECUTE);
 		} catch (Exception ex) {
 
 		}
@@ -240,7 +240,7 @@ public abstract class BotService implements IProcessAgent {
 
 			//	Execute
 			IHTTPResponse httpResponse = (IHTTPResponse) process.getService().submitRequest(httpRequest,
-					Constant.SALESFORCE_SALES_FORCE_SALESFORCE_EXECUTE);
+					Constant.SALESFORCE_SAMPLE_SALESFORCE_SAMPLE_SALESFORCE_EXECUTE);
 			if (httpResponse.isSuccess()) {
 				return httpResponse.getMessage();
 			} else

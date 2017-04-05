@@ -42,12 +42,13 @@ public class COMMAND_SEARCHOPPORTUNITIESSAMPLE extends ABSTRACT_COMMAND_SEARCHOP
 						SOBJECT opportunityRecord = opportunities[i];
 						OPPORTUNITY opportunity = (OPPORTUNITY) opportunityRecord;	
 						chymeAPI.addBE(mapSalesforceToPojo(opportunity));
+						chymeAPI.sendBE(true);
 					}
-					chymeAPI.setMessage(new Message("Opportunity(s) matching your search criteria are available.", null, Message.FLAG_GROUP_BE));
+					chymeAPI.setMessage(new Message("Opportunity(s) matching your search criteria are available.\nDescription: $Description$\nStage Name: $StageName$\nAmount: $Amount$\nProbability: $Probability$\nLead Source: $LeadSource$", null, Message.FLAG_GROUP_BE));
 			} else				
-				chymeAPI.setMessage(new Message(httpResponse.getMessage()));							
+				chymeAPI.setMessage(new Message(httpResponse.getMessage(), null, Message.FLAG_NO_FOLLOWUP_COMMAND));							
 		} catch (Exception e) {
-			chymeAPI.setMessage(new Message(e.getMessage()));	
+			chymeAPI.setMessage(new Message(e.getMessage(), null, Message.FLAG_NO_FOLLOWUP_COMMAND));	
 		}
 	}	
 }
